@@ -10,3 +10,10 @@
 `4. Verification code.`<br>
 `5. Send an activation email.`<br>
 `6. Save user information to the database.`<br>
+
+### Activation
+
+`1. Click on the link to complete the activation: `<br>
+* Query the database for the user based on the activation code.<br>
+* If there is: Activate. (Clear the activation code field.
+* Modify the user's status.<br>
