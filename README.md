@@ -18,7 +18,7 @@
 * If there is: Activate. (Clear the activation code field.
 * Modify the user's status.<br>
 
-2.the code for generating the random verification is shown as below:<br>
+2.the code for generating the random verification is shown as below:`(note:You also need to configure your file)`<br>
 ```java
 package pers.yhy.shop.user.action;
 
