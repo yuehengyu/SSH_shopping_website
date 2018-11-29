@@ -18,6 +18,12 @@
 * If there is: Activate. (Clear the activation code field.
 * Modify the user's status.<br>
 
+### Login and Log out
+1. Enter the username and password.----(need data check.)<br>
+2. The username and password are correct and the user status must be active.<br>
+3. Destroy the session.<br>
+
+
 ### Vefification code function
 The code for generating the random verification is shown as below:`(note:You also need to configure your file)`<br>
 ```java
