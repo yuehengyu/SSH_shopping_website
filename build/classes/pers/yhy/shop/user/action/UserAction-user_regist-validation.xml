@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE validators PUBLIC
+  		"-//Apache Struts//XWork Validator 1.0.3//EN"
+  		"http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+
+<validators>
+	<!-- check username -->
+	<field name="username">
+		<field-validator type="requiredstring">
+			<message>username can not be empty!</message>
+		</field-validator>
+	</field>
+	<!-- check name -->
+	<field name="name">
+		<field-validator type="requiredstring">
+			<message>name can not be empty!</message>
+		</field-validator>
+	</field>
+	<!-- check address -->
+	<field name="addr">
+		<field-validator type="requiredstring">
+			<message>Address can not be empty!</message>
+		</field-validator>
+	</field>
+	
+	
+	<!-- check password -->
+	<field name="password">
+		<field-validator type="requiredstring">
+			<message>password can not be empty!</message>
+		</field-validator>
+	</field>
+	
+	<!-- check email -->
+	<!-- check password -->
+	<field name="email">
+		<field-validator type="email">
+			<message>email format is wrong!</message>
+		</field-validator>
+	</field>
+</validators>
