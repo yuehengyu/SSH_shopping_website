@@ -90,7 +90,7 @@ public class CheckImgAction extends ActionSupport {
 			double theta = jiaodu * Math.PI / 180;
 
 			// generate a random number
-			int index = random.nextInt(words.length()); // 生成随机数 0 到 length - 1
+			int index = random.nextInt(words.length()); // generate a random num from  0 to length - 1
 			// Get alphanumeric or characters
 			char c = words.charAt(index);
 			sb.append(c);
