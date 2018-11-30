@@ -1,20 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <%@ taglib uri="/struts-tags" prefix="s"%>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta charset="utf-8"> 
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>YHY_shopping</title>
-<link href="${pageContext.request.contextPath}/css/slider.css" rel="stylesheet" type="text/css" />
-<link href="${pageContext.request.contextPath}/css/common.css" rel="stylesheet" type="text/css" />
-<link href="${pageContext.request.contextPath}/css/index.css" rel="stylesheet" type="text/css" />
-
+<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>YHY_shopping</title>
+	<link href="${pageContext.request.contextPath}/css/slider.css"
+		rel="stylesheet" type="text/css" />
+	<link href="${pageContext.request.contextPath}/css/common.css"
+		rel="stylesheet" type="text/css" />
+	<link href="${pageContext.request.contextPath}/css/index.css"
+		rel="stylesheet" type="text/css" />
 </head>
 <body>
 
-	<%@include file="menu.jsp" %>
+	<%@include file="menu.jsp"%>
 
 	<div class="container index">
 
@@ -22,7 +24,7 @@
 		<div class="span24">
 			<div id="hotProduct" class="hotProduct clearfix">
 				<div class="title">
-					<strong>热门商品</strong>
+					<strong>Hor Products</strong>
 					<!-- <a  target="_blank"></a> -->
 				</div>
 				<ul class="tab">
@@ -35,34 +37,18 @@
 			<img src="${pageContext.request.contextPath}/image/a.jpg" width="260" height="343" alt="热门商品" title="热门商品">
 </div> -->
 				<ul class="tabContent" style="display: block;">
-					<li><a target="_blank"><img src="${pageContext.request.contextPath}/image/b.jpg"
-							data-original="http://storage.shopxx.net/demo-image/3.0/201301/0ff130db-0a1b-4b8d-a918-ed9016317009-thumbnail.jpg"
-							style="display: block;"></a></li>
-					<li><a target="_blank"><img src="${pageContext.request.contextPath}/image/c.jpg"
-							data-original="http://storage.shopxx.net/demo-image/3.0/201301/51afeef5-f6cb-4936-abea-315cfca0edc0-thumbnail.jpg"
-							style="display: block;"></a></li>
-					<li><a target="_blank"><img src="${pageContext.request.contextPath}/image/d.jpg"
-							style="display: block;"></a></li>
-					<li><a target="_blank"><img src="${pageContext.request.contextPath}/image/e.jpg"
-							style="display: block;"></a></li>
-					<li><a target="_blank"><img src="${pageContext.request.contextPath}/image/f.jpg"
-							style="display: block;"></a></li>
-					<li><a target="_blank"><img src="${pageContext.request.contextPath}/image/g.jpg"
-							style="display: block;"></a></li>
-					<li><a target="_blank"><img src="${pageContext.request.contextPath}/image/h.jpg"
-							style="display: block;"></a></li>
-					<li><a target="_blank"><img src="${pageContext.request.contextPath}/image/i.jpg"
-							style="display: block;"></a></li>
-					<li><a target="_blank"><img src="${pageContext.request.contextPath}/image/i.jpg"
-							style="display: block;"></a></li>
-					<li><a target="_blank"><img src="${pageContext.request.contextPath}/image/i.jpg"
-							style="display: block;"></a></li>
+					<s:iterator value="hList" var="p">
+						<li><a target="_blank" href="${pageContext.request.contextPath}/product_findByPid.action?pid=<s:property value="#p.pid" />"><img
+								src="${pageContext.request.contextPath}/<s:property value="#p.image"/>"
+								data-original="http://storage.shopxx.net/demo-image/3.0/201301/0ff130db-0a1b-4b8d-a918-ed9016317009-thumbnail.jpg"
+								style="display: block;" /></a></li>
+					</s:iterator>
 				</ul>
 				<ul class="tabContent" style="display: none;">
 					<li><a target="_blank"><img
 							src="./Mango商城 - Powered By Mango Team_files/c5b1b396-181a-4805-9e68-9b400d71f91e-thumbnail.jpg"
 							data-original="http://storage.shopxx.net/demo-image/3.0/201301/c5b1b396-181a-4805-9e68-9b400d71f91e-thumbnail.jpg"
-							style="display: block;"></a></li>
+							style="display: block;" /></a></li>
 					<li><a target="_blank"><img
 							src="./Mango商城 - Powered By Mango Team_files/4107e1ce-5e7c-4941-bc0f-718f35ba14cd-thumbnail.jpg"
 							data-original="http://storage.shopxx.net/demo-image/3.0/201301/4107e1ce-5e7c-4941-bc0f-718f35ba14cd-thumbnail.jpg"
@@ -131,7 +117,7 @@
 		<div class="span24">
 			<div id="newProduct" class="newProduct clearfix">
 				<div class="title">
-					<strong>最新商品</strong> <a target="_blank"></a>
+					<strong>New Products</strong> <a target="_blank"></a>
 				</div>
 				<ul class="tab">
 					<li class="current"><a href="./蔬菜分类.htm?tagIds=2"
@@ -144,31 +130,12 @@
 						</div>
 						 -->
 				<ul class="tabContent" style="display: block;">
-					<li><a target="_blank"><img src="${pageContext.request.contextPath}/image/l.jpg"
+				<s:iterator value="nList" var="n">
+					<li><a target="_blank" href="${pageContext.request.contextPath}/product_findByPid.action?pid=<s:property value="#n.pid" />"><img
+							src="${pageContext.request.contextPath}/<s:property value="#n.image"/>"
 							data-original="http://storage.shopxx.net/demo-image/3.0/201301/4a51167a-89d5-4710-aca2-7c76edc355b8-thumbnail.jpg"
 							style="display: block;"></a></li>
-					<li><a target="_blank"><img src="${pageContext.request.contextPath}/image/m.jpg"
-							style="display: block;"></a></li>
-
-					<li><a target="_blank"><img src="${pageContext.request.contextPath}/image/n.jpg"
-							style="display: block;"></a></li>
-					<li><a target="_blank"><img src="${pageContext.request.contextPath}/image/o.jpg"
-							style="display: block;"></a></li>
-					<li><a target="_blank"><img src="${pageContext.request.contextPath}/image/p.jpg"
-							style="display: block;"></a></li>
-					<li><a target="_blank"><img src="${pageContext.request.contextPath}/image/m.jpg"
-							style="display: block;"></a></li>
-					<li><a target="_blank"><img src="${pageContext.request.contextPath}/image/15.jpg"
-							style="display: block;"></a>
-						<li><a target="_blank"><img src="${pageContext.request.contextPath}/image/l.jpg"
-								data-original="http://storage.shopxx.net/demo-image/3.0/201301/b499fb5e-999f-431b-a375-172ee09e4a3e-thumbnail.jpg"
-								style="display: block;" /></a></li>
-						<li><a target="_blank"><img src="${pageContext.request.contextPath}/image/l.jpg"
-								data-original="http://storage.shopxx.net/demo-image/3.0/201301/b499fb5e-999f-431b-a375-172ee09e4a3e-thumbnail.jpg"
-								style="display: block;" /></a></li>
-						<li><a target="_blank"><img src="${pageContext.request.contextPath}/image/l.jpg"
-								data-original="http://storage.shopxx.net/demo-image/3.0/201301/b499fb5e-999f-431b-a375-172ee09e4a3e-thumbnail.jpg"
-								style="display: block;" /></a></li>
+					</s:iterator>
 				</ul>
 				<ul class="tabContent" style="display: none;">
 					<li><a target="_blank"><img
@@ -279,8 +246,8 @@
 	<div class="container footer">
 		<div class="span24">
 			<div class="footerAd">
-				<img src="${pageContext.request.contextPath}/image/footer.jpg" width="950" height="52" alt="我们的优势"
-					title="我们的优势">
+				<img src="${pageContext.request.contextPath}/image/footer.jpg"
+					width="950" height="52" alt="我们的优势" title="我们的优势">
 			</div>
 		</div>
 		<div class="span24">

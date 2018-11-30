@@ -27,6 +27,8 @@
 		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
 		<!-- Injection connection pool -->
 		<property name="dataSource" ref="dataSource" />
+		
+		
 		<!-- Configuring other properties of Hibernate -->
 		<property name="hibernateProperties">
 			<props>
@@ -37,10 +39,14 @@
 				<prop key="hibernate.hbm2ddl.auto">update</prop>
 			</props>
 		</property>
+		
+		
 		<!-- Configuring Hibernate mapping files -->
 		<property name="mappingResources">
 			<list>
 				<value>pers/yhy/shop/user/vo/User.hbm.xml</value>
+				<value>pers/yhy/shop/category/vo/Category.hbm.xml</value>
+				<value>pers/yhy/shop/product/vo/Product.hbm.xml</value>
 			</list>
 		</property>
 
@@ -60,25 +66,49 @@
 	<!-- index website's Action -->
 	<bean id="indexAction" class="pers.yhy.shop.index.action.IndexAction"
 		scope="prototype">
+		<property name="categoryService" ref="categoryService"></property>
+		<property name="productService" ref="productService"></property>
 	</bean>
+	
 
 	<!-- Verification code Action -->
 	<bean id="checkImgAction" class="pers.yhy.shop.user.action.CheckImgAction"
 		scope="prototype"></bean>
+		
 	<!-- user module's Action -->
 	<bean id="userAction" class="pers.yhy.shop.user.action.UserAction"
 		scope="prototype">
 		<property name="userService" ref="userService"></property>
+	</bean>
+	
+	<!-- product module's Action -->
+	<bean id="productAction" class="pers.yhy.shop.product.action.ProductAction"
+		scope="prototype">
+		<property name="productService" ref="productService"></property>
 	</bean>
 
 	<!-- Service configuration =========================== -->
 	<bean id="userService" class="pers.yhy.shop.user.service.UserService">
 		<property name="userDao" ref="userDao"></property>
 	</bean>
+	<bean id="categoryService" class="pers.yhy.shop.category.service.CategoryService">
+		<property name="categoryDao" ref="categoryDao"></property>
+	</bean>
+	<bean id="productService" class="pers.yhy.shop.product.service.ProductService">
+		<property name="productDao" ref="productDao"></property>
+	</bean>
+	
 
 	<!-- Dao configuration =========================== -->
 	<bean id="userDao" class="pers.yhy.shop.user.dao.UserDao">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
+	<bean id="categoryDao" class="pers.yhy.shop.category.dao.CategoryDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="productDao" class="pers.yhy.shop.product.dao.ProductDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
 
 </beans>

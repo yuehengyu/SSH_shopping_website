@@ -49,14 +49,10 @@
 	</div>
 	<div class="span24">
 		<ul class="mainNav">
-			<li><a href="./index.htm">Home</a> |</li>
-			<li><a href="./蔬菜分类.htm">Custom package</a> |</li>
-			<li><a>Secure channel</a> |</li>
-			<li><a>Mall card</a> |</li>
-			<li><a>Vegetable base</a> |</li>
-			<li><a>Season Health</a> |</li>
-			<li><a>Convenience services</a> |</li>
-
+			<li><a href="${pageContext.request.contextPath}/index.action">Home</a> |</li>
+			<s:iterator value="#session.clist" var="c">
+				<li><a href="./蔬菜分类.htm"><s:property value="#c.cname" /></a> |</li>
+			</s:iterator>
 		</ul>
 	</div>
 

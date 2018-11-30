@@ -29,5 +29,8 @@
 		</action>
 		<!-- verification code action -->
 		<action name="checkImg" class="checkImgAction"></action>
+		<action name="product_*" class="productAction" method="{1}">
+			<result name="findByPid">/WEB-INF/jsp/product.jsp</result>
+		</action>
 	</package>
 </struts>
