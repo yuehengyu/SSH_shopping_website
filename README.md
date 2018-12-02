@@ -27,7 +27,7 @@
 `spring-expression-3.2.0.RELEASE.jar`<br>
 `com.springsource.org.apache.commons.logging-1.1.1.jar`<br>
 `com.springsource.org.apache.log4j-1.2.15.jar`<br>
-*AOP
+*AOP<br>
 `spring-aop-3.2.0.RELEASE.jar`<br>
 `spring-aspects-3.2.0.RELEASE.jar`<br>
 `com.springsource.org.aopalliance-1.0.0.jar`<br>
@@ -39,16 +39,17 @@
 `spring-tx-3.2.0.RELEASE.jar`<br>
 *Spring integrates with other ORM frameworks <br>
 `spring-orm-3.2.0.RELEASE.jar`<br>
-*Spring for web
+*Spring for web<br>
 `spring-web-3.2.0.RELEASE.jar`<br>
-*String for unit
+*String for unit<br>
 `spring-test-3.2.0.RELEASE.jar`<br>
-4.For Hibernate
+4.For Hibernate<br>
 `hibernate-distribution-3.6.10.Final\hibernate3.jar`<br>
 `hibernate-distribution-3.6.10.Final\lib\required\*.jar`<br>
 `hibernate-distribution-3.6.10.Final\lib\jpa\*.jar`<br>
 `slf4j-log4j.jar`<br>
-
+5.Basic configuration information<br>
+you can see me code directly:struts.xml,jdbc.properties,log4j.properties,applicationContext.xml 
 
 ## 1.1.1 user modules
 ### Register
@@ -201,3 +202,54 @@ public class CheckImgAction extends ActionSupport {
 
 
 ```
+
+## 1.1.2 Primary classification module
+
+### Query primary classification
+Store the primary classification into the session scope. (There is a primary classification data in each page).<br>
+
+### Quert each primary classification 
+At the same time, query the secondary classification to which each primary classification belongs.<br>
+
+## 1.1.3 Products module
+
+### Query hot Products
+Query hot products: (limited number of 10)<br>
+
+### Query lastest product
+Query lastest products: (limited number of 10)<br>
+
+### Query product by categoryId
+Find product info by different categoryId.<br>
+
+### Query procduct in some second classification<br>
+Find product info in second classification by categorySecond id<br>
+
+### Query Product info by product id<br>
+
+## 1.1.4 Cart Module<br>
+
+### add product to cart<br>
+### remove the product from cart by using product id<br>
+### clear the cart<br>
+
+## 1.1.5 Orders Module<br>
+
+### generate a new order<br>
+Add the order info to our database and clear the cart<br>
+
+### Pay the money for your order<br>
+1.online payment function(used yibao payment interface--but only support chinese banks)<br>
+2.update the order state(1:not pay the money 2: have been paid the money <br>
+			 3:have been delivery,but user does not received 4: transaction success)<br>
+3.update the order info(set users' name,address and phone number)<br>
+
+### query my orders<br>
+Find all the orders by user id<br>
+
+### See the order detail info
+Find the order detail info by order id
+
+
+
+
