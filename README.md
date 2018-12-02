@@ -6,8 +6,21 @@
 `struts-2.3.15.3\apps\struts2-blank.war\WEB-INF\lib\*.jar`<br>
 `struts-2.3.15.3\lib\struts2-json-plugin-2.3.15.3.jar`<br>
 `struts-2.3.15.3\lib\struts2-spring-plugin-2.3.15.3.jar`<br>
-2.web.xml <br>
-`
+2.web.xml---(struts2 core filter) <br>
+```xml
+<filter>
+ 	<filter-name>struts2</filter-name>
+ 	<filter-class>
+org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter
+</filter-class>
+ </filter>
+ 
+ <filter-mapping>
+ 	<filter-name>struts2</filter-name>
+ 	<url-pattern>/*</url-pattern>
+ </filter-mapping>
+
+```
 
 
 
