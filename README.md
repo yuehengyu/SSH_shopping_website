@@ -1,5 +1,16 @@
 # SSH_shopping_website
-`I used the SSH to develop this website bymeself. I will brief introduce what features I implemented.`
+`I used the SSH（struts+spring+hibernate+mysql） to develop this website bymeself. I will brief introduce what features I implemented.`
+
+## Build a development environment(I will tell you which packages and files you need to import.)
+1.For Struts2:<br>
+`struts-2.3.15.3\apps\struts2-blank.war\WEB-INF\lib\*.jar`<br>
+`struts-2.3.15.3\lib\struts2-json-plugin-2.3.15.3.jar`<br>
+`struts-2.3.15.3\lib\struts2-spring-plugin-2.3.15.3.jar`<br>
+2.web.xml <br>
+`
+
+
+
 
 ## 1.1.1 user modules
 ### Register
