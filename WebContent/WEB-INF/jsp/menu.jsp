@@ -4,14 +4,14 @@
 	<div class="span5">
 		<div class="logo">
 			<a href="./shopping/index.htm"> <img
-				src="${pageContext.request.contextPath}/image/r___________renleipic_01/logo.gif"
+				src="${pageContext.request.contextPath}/image/r___________renleipic_01/logo.png"
 				alt="YHY" />
 			</a>
 		</div>
 	</div>
 	<div class="span9">
 		<div class="headerAd">
-			<img src="${pageContext.request.contextPath}/image/header.jpg"
+			<img src="${pageContext.request.contextPath}/image/r___________renleipic_01/banner1.png"
 				width="320" height="50" alt="Genuine" title="Genuine" />
 		</div>
 	</div>

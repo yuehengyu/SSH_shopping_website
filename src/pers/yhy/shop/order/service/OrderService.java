@@ -60,4 +60,22 @@ public class OrderService {
 		pageBean.setList(list);
 		return pageBean;
 	}
+	
+	/**
+	 * find order info by order id
+	 * @param oid
+	 * @return
+	 */
+	public Order findByOid(Integer oid) {
+		return orderDao.findByOid(oid);
+	}
+
+	
+	/**
+	 * update order user info
+	 * @param currOrder
+	 */
+	public void update(Order currOrder) {
+		orderDao.update(currOrder);
+	}
 }

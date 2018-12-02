@@ -51,7 +51,7 @@
 				<dl id="giftItems" class="hidden" style="display: none;">
 				</dl>
 				<div class="total">
-					<em id="promotion"></em> <em> 登录后确认是否享有优惠 </em> Credits: <em
+					<em id="promotion"></em> <em> Sign in to confirm if you have a discount </em> Credits: <em
 						id="effectivePoint"><s:property value="#session.cart.total" /></em>
 					Total Money: <strong id="effectivePrice">CDN$:<s:property
 							value="#session.cart.total" /></strong>

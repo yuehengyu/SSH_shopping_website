@@ -1,3 +1,6 @@
 eclipse.preferences.version=1
 encoding//WebContent/WEB-INF/jsp/index.jsp=UTF-8
 encoding//WebContent/WEB-INF/jsp/regist.jsp=UTF-8
+encoding//src/pers/yhy/shop/utils/PageBean.java=UTF-8
+encoding//src/pers/yhy/shop/utils/PaymentUtil.java=UTF-8
+encoding/<project>=UTF-8

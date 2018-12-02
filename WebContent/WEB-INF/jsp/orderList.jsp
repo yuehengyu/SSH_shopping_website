@@ -38,7 +38,9 @@
 						<tr>
 							<th colspan="5">Order number： <s:property value="#order.oid" />&nbsp;&nbsp;&nbsp;&nbsp;
 								Order Status: <s:if test="#order.state==1">
-									Not paying!!<a href="#"><font color="red">Paying Now</font></a>
+									Not paying!!<a
+										href="${ pageContext.request.contextPath }/order_findByOid.action?oid=<s:property value="#order.oid" />"><font
+										color="red">Paying Now</font></a>
 								</s:if> <s:if test="#order.state==2">
 							 	Have been paid
 							 </s:if> <s:if test="#order.state==3">
@@ -76,30 +78,30 @@
 							<div class="pagination">
 								<span>current page:<s:property value="pageBean.page" />/<s:property
 										value="pageBean.totalPage" /></span>
-									<s:if test="pageBean.page!=1">
-										<a class="firstPage"
-											href="${pageContext.request.contextPath}/order_findByUid.action?page=1">&nbsp;</a>
-										<a class="previousPage"
-											href="${pageContext.request.contextPath}/order_findByUid.action?page=<s:property value="pageBean.page-1"/>">&nbsp;</a>
-									</s:if>
-									<s:iterator begin="1" end="pageBean.totalPage" var="i">
-										<s:if test="pageBean.page!=#i">
+								<s:if test="pageBean.page!=1">
+									<a class="firstPage"
+										href="${pageContext.request.contextPath}/order_findByUid.action?page=1">&nbsp;</a>
+									<a class="previousPage"
+										href="${pageContext.request.contextPath}/order_findByUid.action?page=<s:property value="pageBean.page-1"/>">&nbsp;</a>
+								</s:if>
+								<s:iterator begin="1" end="pageBean.totalPage" var="i">
+									<s:if test="pageBean.page!=#i">
 
-											<a
-												href="${pageContext.request.contextPath}/order_findByUid.action?page=<s:property
+										<a
+											href="${pageContext.request.contextPath}/order_findByUid.action?page=<s:property
 								value="#i" />"><s:property
-													value="#i" /></a>
-										</s:if>
-										<s:else>
-											<span class="currentPage"><s:property value="#i" /></span>
-										</s:else>
-									</s:iterator>
-									<s:if test="pageBean.page!=pageBean.totalPage">
-										<a class="nextPage"
-											href="${pageContext.request.contextPath}/order_findByUid.action?page=<s:property value="pageBean.page+1"/>">&nbsp;</a>
-										<a class="lastPage"
-											href="${pageContext.request.contextPath}/order_findByUid.action?page=<s:property value="pageBean.totalPage"/>">&nbsp;</a>
+												value="#i" /></a>
 									</s:if>
+									<s:else>
+										<span class="currentPage"><s:property value="#i" /></span>
+									</s:else>
+								</s:iterator>
+								<s:if test="pageBean.page!=pageBean.totalPage">
+									<a class="nextPage"
+										href="${pageContext.request.contextPath}/order_findByUid.action?page=<s:property value="pageBean.page+1"/>">&nbsp;</a>
+									<a class="lastPage"
+										href="${pageContext.request.contextPath}/order_findByUid.action?page=<s:property value="pageBean.totalPage"/>">&nbsp;</a>
+								</s:if>
 							</div>
 						</td>
 					</tr>

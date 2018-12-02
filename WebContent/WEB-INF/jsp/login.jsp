@@ -42,7 +42,7 @@
 	<div class="container login">
 		<div class="span12">
 			<div class="ad">
-				<img src="${pageContext.request.contextPath}/image/login.jpg"
+				<img src="${pageContext.request.contextPath}/image/login1.jpg"
 					width="500" height="330" alt="member login" title="member login" />
 			</div>
 		</div>
@@ -84,20 +84,20 @@
 									<th>&nbsp;</th>
 									<td><label> <input type="checkbox"
 											id="isRememberUsername" name="isRememberUsername"
-											value="true" />记住用户名 </label> <label> &nbsp;&nbsp;<a>找回密码</a>
+											value="true" />Remember me </label> <label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a>Forget Password</a>
 									</label></td>
 								</tr>
 								<tr>
 									<th>&nbsp;</th>
-									<td><input type="submit" class="submit" value="登 录"></td>
+									<td><input type="submit" class="submit" value="Login"></td>
 								</tr>
 								<tr class="register">
 									<th>&nbsp;</th>
 									<td>
 										<dl>
-											<dt>还没有注册账号？</dt>
+											<dt>Do not have a account&nbsp;？</dt>
 											<dd>
-												立即注册即可体验在线购物！ <a href="./会员注册.htm">立即注册</a>
+												Sign up and shopping now！ <a href="${pageContext.request.contextPath}/user_registPage.action">Sign up</a>
 											</dd>
 										</dl>
 									</td>
