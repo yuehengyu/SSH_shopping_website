@@ -31,7 +31,7 @@
 						style="display: list-item;"><s:property value="#session.existUser.username" />|</li>
 					<li id="headerLogin" class="headerLogin"
 						style="display: list-item;"><a
-						href="#">Orders</a>|</li>
+						href="${pageContext.request.contextPath}/order_findByUid.action?page=1">Orders</a>|</li>
 					<li id="headerLogout" class="headerRegister"
 						style="display: list-item;"><a href="${pageContext.request.contextPath}/user_quit.action">[Log out]</a>|</li>
 				</s:else>
@@ -41,7 +41,7 @@
 			</ul>
 		</div>
 		<div class="cart">
-			<a href="./cart.htm">Shopping cart</a>
+			<a href="${pageContext.request.contextPath}/cart_myCart.action">Shopping cart</a>
 		</div>
 		<div class="phone">
 			Customer service hot line: <strong>5196949329</strong>
@@ -51,7 +51,7 @@
 		<ul class="mainNav">
 			<li><a href="${pageContext.request.contextPath}/index.action">Home</a> |</li>
 			<s:iterator value="#session.clist" var="c">
-				<li><a href="./蔬菜分类.htm"><s:property value="#c.cname" /></a> |</li>
+				<li><a href="${pageContext.request.contextPath}/product_findByCid.action?cid=<s:property value="#c.cid"/>&page=1"><s:property value="#c.cname" /></a> |</li>
 			</s:iterator>
 		</ul>
 	</div>

@@ -2,8 +2,8 @@
 <!DOCTYPE hibernate-mapping PUBLIC 
     "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-    
-    <hibernate-mapping>
+
+<hibernate-mapping>
 	<class name="pers.yhy.shop.product.vo.Product" table="product">
 		<id name="pid">
 			<generator class="native" />
@@ -15,5 +15,10 @@
 		<property name="pdesc" />
 		<property name="is_hot" />
 		<property name="pdate" />
+
+		<many-to-one name="categorySecond" lazy="false"
+			class="pers.yhy.shop.categorysecond.vo.CategorySecond" column="csid">
+		</many-to-one>
 	</class>
+
 </hibernate-mapping>

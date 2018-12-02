@@ -27,8 +27,8 @@
 		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
 		<!-- Injection connection pool -->
 		<property name="dataSource" ref="dataSource" />
-		
-		
+
+
 		<!-- Configuring other properties of Hibernate -->
 		<property name="hibernateProperties">
 			<props>
@@ -39,14 +39,18 @@
 				<prop key="hibernate.hbm2ddl.auto">update</prop>
 			</props>
 		</property>
-		
-		
+
+
 		<!-- Configuring Hibernate mapping files -->
 		<property name="mappingResources">
 			<list>
 				<value>pers/yhy/shop/user/vo/User.hbm.xml</value>
 				<value>pers/yhy/shop/category/vo/Category.hbm.xml</value>
 				<value>pers/yhy/shop/product/vo/Product.hbm.xml</value>
+				<value>pers/yhy/shop/categorysecond/vo/CategorySecond.hbm.xml
+				</value>
+				<value>pers/yhy/shop/order/vo/Order.hbm.xml</value>
+				<value>pers/yhy/shop/order/vo/OrderItem.hbm.xml</value>
 			</list>
 		</property>
 
@@ -69,23 +73,36 @@
 		<property name="categoryService" ref="categoryService"></property>
 		<property name="productService" ref="productService"></property>
 	</bean>
-	
+
 
 	<!-- Verification code Action -->
 	<bean id="checkImgAction" class="pers.yhy.shop.user.action.CheckImgAction"
 		scope="prototype"></bean>
-		
+
 	<!-- user module's Action -->
 	<bean id="userAction" class="pers.yhy.shop.user.action.UserAction"
 		scope="prototype">
 		<property name="userService" ref="userService"></property>
 	</bean>
-	
+
 	<!-- product module's Action -->
 	<bean id="productAction" class="pers.yhy.shop.product.action.ProductAction"
 		scope="prototype">
 		<property name="productService" ref="productService"></property>
 	</bean>
+
+	<!-- cart Action -->
+	<bean id="cartAction" class="pers.yhy.shop.cart.action.CartAction"
+		scope="prototype">
+		<property name="productService" ref="productService"></property>
+	</bean>
+
+	<!-- order Action -->
+	<bean id="orderAction" class="pers.yhy.shop.order.action.OrderAction"
+		scope="prototype">
+		<property name="orderService" ref="orderService"></property>
+	</bean>
+
 
 	<!-- Service configuration =========================== -->
 	<bean id="userService" class="pers.yhy.shop.user.service.UserService">
@@ -97,7 +114,11 @@
 	<bean id="productService" class="pers.yhy.shop.product.service.ProductService">
 		<property name="productDao" ref="productDao"></property>
 	</bean>
-	
+
+	<bean id="orderService" class="pers.yhy.shop.order.service.OrderService">
+		<property name="orderDao" ref="orderDao"></property>
+	</bean>
+
 
 	<!-- Dao configuration =========================== -->
 	<bean id="userDao" class="pers.yhy.shop.user.dao.UserDao">
@@ -109,6 +130,9 @@
 	<bean id="productDao" class="pers.yhy.shop.product.dao.ProductDao">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
-	
+	<bean id="orderDao" class="pers.yhy.shop.order.dao.OrderDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
 
 </beans>

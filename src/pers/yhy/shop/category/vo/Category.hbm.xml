@@ -9,5 +9,10 @@
 			<generator class="native" />
 		</id>
 		<property name="cname" />
+		
+		<set name="categorySeconds" order-by="csid" lazy="false">
+			<key column="cid"></key>
+			<one-to-many class="pers.yhy.shop.categorysecond.vo.CategorySecond"/>
+		</set>
 	</class>
 </hibernate-mapping>

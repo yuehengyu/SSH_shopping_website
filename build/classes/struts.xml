@@ -7,9 +7,10 @@
 
     <constant name="struts.devMode" value="false" />
     
-	<package name="shop" extends="struts-default" namespace="/">
+	<package name="SSH_shopping_website" extends="struts-default" namespace="/">
 		<global-results>
 			<result name="msg">/WEB-INF/jsp/msg.jsp</result>
+			<result name="login">/WEB-INF/jsp/login.jsp</result>
 		</global-results>
 		<!-- configure the action of home page -->
 		<action name="index" class="indexAction">
@@ -31,6 +32,20 @@
 		<action name="checkImg" class="checkImgAction"></action>
 		<action name="product_*" class="productAction" method="{1}">
 			<result name="findByPid">/WEB-INF/jsp/product.jsp</result>
+			<result name="findByCid">/WEB-INF/jsp/productList.jsp</result>
+			<result name="findByCsid">/WEB-INF/jsp/productList.jsp</result>
+		</action>
+		
+		<action name="cart_*" class="cartAction" method="{1}">
+			<result name="addCart">/WEB-INF/jsp/cart.jsp</result>
+			<result name="clearCart">/WEB-INF/jsp/cart.jsp</result>
+			<result name="removeCart">/WEB-INF/jsp/cart.jsp</result>
+			<result name="myCart">/WEB-INF/jsp/cart.jsp</result>
+		</action>
+		
+		<action name="order_*" class="orderAction" method="{1}">
+			<result name="saveSuccess">/WEB-INF/jsp/order.jsp</result>
+			<result name="findByUidSuccess">/WEB-INF/jsp/orderList.jsp</result>
 		</action>
 	</package>
 </struts>

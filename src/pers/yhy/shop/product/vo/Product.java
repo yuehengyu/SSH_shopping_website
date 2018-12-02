@@ -2,6 +2,8 @@ package pers.yhy.shop.product.vo;
 
 import java.util.Date;
 
+import pers.yhy.shop.categorysecond.vo.CategorySecond;
+
 /**
  * product object
  * 
@@ -18,9 +20,16 @@ public class Product {
 	private Integer is_hot;
 	private Date pdate;
 	// second classificationima primary key object
-	
-	
-	
+	private CategorySecond categorySecond;
+
+	public CategorySecond getCategorySecond() {
+		return categorySecond;
+	}
+
+	public void setCategorySecond(CategorySecond categorySecond) {
+		this.categorySecond = categorySecond;
+	}
+
 	public Integer getPid() {
 		return pid;
 	}
@@ -84,6 +93,5 @@ public class Product {
 	public void setPdate(Date pdate) {
 		this.pdate = pdate;
 	}
-
 
 }
