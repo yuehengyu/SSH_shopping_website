@@ -11,18 +11,43 @@
 <filter>
  	<filter-name>struts2</filter-name>
  	<filter-class>
-org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter
-</filter-class>
+		org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter
+	</filter-class>
  </filter>
- 
  <filter-mapping>
  	<filter-name>struts2</filter-name>
  	<url-pattern>/*</url-pattern>
  </filter-mapping>
-
 ```
-
-
+3.For Spring(spring 3.2,there are so many jars you need to import for spring AOP,Spring JDBC,Spring transaction and so on):<br>
+*jar<br>
+`spring-beans-3.2.0.RELEASE.jar`<br>
+`spring-context-3.2.0.RELEASE.jar`<br>
+`spring-core-3.2.0.RELEASE.jar`<br>
+`spring-expression-3.2.0.RELEASE.jar`<br>
+`com.springsource.org.apache.commons.logging-1.1.1.jar`<br>
+`com.springsource.org.apache.log4j-1.2.15.jar`<br>
+*AOP
+`spring-aop-3.2.0.RELEASE.jar`<br>
+`spring-aspects-3.2.0.RELEASE.jar`<br>
+`com.springsource.org.aopalliance-1.0.0.jar`<br>
+`com.springsource.org.aspectj.weaver-1.6.8.RELEASE.jar`<br>
+*Spring Jdbc <br>
+`spring-jdbc-3.2.0.RELEASE.jar`<br>
+`spring-tx-3.2.0.RELEASE.jar`<br>
+*Spring Transaction
+`spring-tx-3.2.0.RELEASE.jar`<br>
+*Spring integrates with other ORM frameworks <br>
+`spring-orm-3.2.0.RELEASE.jar`<br>
+*Spring for web
+`spring-web-3.2.0.RELEASE.jar`<br>
+*String for unit
+`spring-test-3.2.0.RELEASE.jar`<br>
+4.For Hibernate
+`hibernate-distribution-3.6.10.Final\hibernate3.jar`<br>
+`hibernate-distribution-3.6.10.Final\lib\required\*.jar`<br>
+`hibernate-distribution-3.6.10.Final\lib\jpa\*.jar`<br>
+`slf4j-log4j.jar`<br>
 
 
 ## 1.1.1 user modules
