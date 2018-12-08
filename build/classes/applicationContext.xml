@@ -51,6 +51,7 @@
 				</value>
 				<value>pers/yhy/shop/order/vo/Order.hbm.xml</value>
 				<value>pers/yhy/shop/order/vo/OrderItem.hbm.xml</value>
+				<value>pers/yhy/shop/adminuser/vo/AdminUser.hbm.xml</value>
 			</list>
 		</property>
 
@@ -103,6 +104,21 @@
 		<property name="orderService" ref="orderService"></property>
 	</bean>
 
+	<bean id="adminUserAction" class="pers.yhy.shop.adminuser.action.AdminUserAction"
+		scope="prototype">
+		<property name="adminUserService" ref="adminUserService"></property>
+	</bean>
+	<bean id="adminCategoryAction" class="pers.yhy.shop.category.adminaction.AdminCategoryAction"
+		scope="prototype">
+		<property name="categoryService" ref="categoryService"></property>
+	</bean>
+	
+	<bean id="adminSecondCategoryAction" class="pers.yhy.shop.categorysecond.adminaction.AdminSecondCategoryAction"
+		scope="prototype">
+		<property name="categorySecondService" ref="categorySecondService"></property>
+		<property name="categoryService" ref="categoryService"></property>
+	</bean>
+
 
 	<!-- Service configuration =========================== -->
 	<bean id="userService" class="pers.yhy.shop.user.service.UserService">
@@ -119,6 +135,13 @@
 		<property name="orderDao" ref="orderDao"></property>
 	</bean>
 
+	<bean id="adminUserService" class="pers.yhy.shop.adminuser.service.AdminUserService">
+		<property name="adminUserDao" ref="adminUserDao"></property>
+	</bean>
+	
+	<bean id="categorySecondService" class="pers.yhy.shop.categorysecond.service.CategorySecondService">
+		<property name="categorySecondDao" ref="categorySecondDao"></property>
+	</bean>
 
 	<!-- Dao configuration =========================== -->
 	<bean id="userDao" class="pers.yhy.shop.user.dao.UserDao">
@@ -133,6 +156,12 @@
 	<bean id="orderDao" class="pers.yhy.shop.order.dao.OrderDao">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
-
-
+	<!-- admin user login -->
+	<bean id="adminUserDao" class="pers.yhy.shop.adminuser.dao.AdminUserDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<!-- admin user magage category -->
+	<bean id="categorySecondDao" class="pers.yhy.shop.categorysecond.dao.CategorySecondDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
 </beans>

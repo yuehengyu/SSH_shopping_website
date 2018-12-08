@@ -10,7 +10,7 @@
 		</id>
 		<property name="cname" />
 		
-		<set name="categorySeconds" order-by="csid" lazy="false">
+		<set name="categorySeconds" order-by="csid" lazy="false" cascade="delete">
 			<key column="cid"></key>
 			<one-to-many class="pers.yhy.shop.categorysecond.vo.CategorySecond"/>
 		</set>

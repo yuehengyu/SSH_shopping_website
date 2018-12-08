@@ -29,5 +29,38 @@ public class CategoryDao extends HibernateDaoSupport {
 		};
 		return null; 
 	}
+	
+	/**
+	 * save primary category to our database
+	 * @param category
+	 */
+	public void save(Category category) {
+		this.getHibernateTemplate().save(category);
+	}
+	
+	/**
+	 * according cid to find the primary classification
+	 * @param cid
+	 * @return
+	 */
+	public Category findByCid(Integer cid) {
+		return this .getHibernateTemplate().get(Category.class, cid);
+	}
+	
+	/**
+	 * delete primary classification
+	 * @param category
+	 */
+	public void delete(Category category) {
+		this.getHibernateTemplate().delete(category);
+	}
+	
+	/**
+	 * update primary classification
+	 * @param category
+	 */
+	public void update(Category category) {
+		this.getHibernateTemplate().update(category);
+	}
 
 }

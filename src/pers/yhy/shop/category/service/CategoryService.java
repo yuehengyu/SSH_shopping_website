@@ -28,4 +28,36 @@ public class CategoryService {
 	public List<Category> findAll() {
 		return categoryDao.findAll();
 	}
+	
+	/**
+	 * save primary category to our database
+	 * @param category
+	 */
+	public void save(Category category) {
+		categoryDao.save(category);
+	}
+	
+	/**
+	 * according cid to find the primary classification
+	 * @param cid
+	 */
+	public Category findByCid(Integer cid) {
+		return categoryDao.findByCid(cid);
+	}
+	
+	/**
+	 * delete the primary classification 
+	 * @param category
+	 */
+	public void delete(Category category) {
+		categoryDao.delete(category);
+	}
+	
+	/**
+	 * update primary classification info
+	 * @param category
+	 */
+	public void update(Category category) {
+		categoryDao.update(category);
+	}
 }

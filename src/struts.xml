@@ -5,9 +5,10 @@
 
 <struts>
 
-    <constant name="struts.devMode" value="false" />
-    
-	<package name="SSH_shopping_website" extends="struts-default" namespace="/">
+	<constant name="struts.devMode" value="false" />
+
+	<package name="SSH_shopping_website" extends="struts-default"
+		namespace="/">
 		<global-results>
 			<result name="msg">/WEB-INF/jsp/msg.jsp</result>
 			<result name="login">/WEB-INF/jsp/login.jsp</result>
@@ -16,7 +17,7 @@
 		<action name="index" class="indexAction">
 			<result name="index">/WEB-INF/jsp/index.jsp</result>
 		</action>
-		
+
 		<!-- configure user module's action -->
 		<action name="user_*" class="userAction" method="{1}">
 			<result name="registPage">/WEB-INF/jsp/regist.jsp</result>
@@ -35,18 +36,40 @@
 			<result name="findByCid">/WEB-INF/jsp/productList.jsp</result>
 			<result name="findByCsid">/WEB-INF/jsp/productList.jsp</result>
 		</action>
-		
+
 		<action name="cart_*" class="cartAction" method="{1}">
 			<result name="addCart">/WEB-INF/jsp/cart.jsp</result>
 			<result name="clearCart">/WEB-INF/jsp/cart.jsp</result>
 			<result name="removeCart">/WEB-INF/jsp/cart.jsp</result>
 			<result name="myCart">/WEB-INF/jsp/cart.jsp</result>
 		</action>
-		
+
 		<action name="order_*" class="orderAction" method="{1}">
 			<result name="saveSuccess">/WEB-INF/jsp/order.jsp</result>
 			<result name="findByUidSuccess">/WEB-INF/jsp/orderList.jsp</result>
 			<result name="findByOidSuccess">/WEB-INF/jsp/order.jsp</result>
+		</action>
+
+		<action name="adminUser_*" class="adminUserAction" method="{1}">
+			<result name="loginSuccess" type="redirect">/admin/home.jsp</result>
+			<result name="loginFail">/admin/index.jsp</result>
+		</action>
+
+		<action name="adminCategory_*" class="adminCategoryAction" method="{1}">
+			<result name="findAll">/admin/category/list.jsp</result>
+			<result name="saveSuccess" type="redirectAction">adminCategory_findAll.action</result>
+			<result name="deleteSuccess" type="redirectAction">adminCategory_findAll.action</result>
+			<result name="editSuccess">/admin/category/edit.jsp</result>
+			<result name="updateSuccess" type="redirectAction">adminCategory_findAll.action</result>
+		</action>
+		
+		<action name="adminCategorySecond_*" class="adminSecondCategoryAction" method="{1}">
+			<result name="findAll">/admin/categorysecond/secondlist.jsp</result>
+			<result name="addPage">/admin/categorysecond/secondadd.jsp</result>
+			<result name="editSuccess">/admin/categorysecond/secondedit.jsp</result>
+			<result name="deleteSuccess" type="redirectAction">adminCategorySecond_findAll.action?page=1</result>
+			<result name="saveSuccess" type="redirectAction">adminCategorySecond_findAll.action?page=1</result>
+			<result name="updateSuccess" type="redirectAction">adminCategorySecond_findAll.action?page=1</result>
 		</action>
 	</package>
 </struts>
