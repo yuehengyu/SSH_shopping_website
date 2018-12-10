@@ -124,4 +124,62 @@ public class ProductDao extends HibernateDaoSupport {
 		return null;
 	}
 
+	/**
+	 * compute the total product number
+	 * 
+	 * @return
+	 */
+	public int findCount() {
+		String hql = "select count(*) from Product";
+		List<Long> list = this.getHibernateTemplate().find(hql);
+		if (list.size() > 0 && list != null) {
+			return list.get(0).intValue();
+		}
+		return 0;
+	}
+
+	/**
+	 * find all the product info from database by using pagebean
+	 * 
+	 * @param begin
+	 * @param limit
+	 * @return
+	 */
+	public List<Product> findByPage(int begin, int limit) {
+		String hql = "from Product order by pdate desc";
+		List<Product> list = this.getHibernateTemplate()
+				.execute(new PageHibernateCallback<Product>(hql, null, begin, limit));
+		if (list.size() > 0 && list != null) {
+			return list;
+		}
+		return null;
+	}
+
+	/**
+	 * save product to database
+	 * 
+	 * @param product
+	 */
+	public void save(Product product) {
+		this.getHibernateTemplate().save(product);
+	}
+
+	/**
+	 * delete product item by pid
+	 * 
+	 * @param product
+	 */
+	public void delete(Product product) {
+		this.getHibernateTemplate().delete(product);
+	}
+
+	/**
+	 * edit info and save to database
+	 * 
+	 * @param product
+	 */
+	public void update(Product product) {
+		this.getHibernateTemplate().update(product);
+	}
+
 }

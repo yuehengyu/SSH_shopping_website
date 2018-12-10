@@ -1,3 +1,4 @@
+<%@page import="org.apache.struts2.components.Include"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -210,62 +211,39 @@
 		<div class="span24">
 			<div class="friendLink">
 				<dl>
-					<dt>新手指南</dt>
+					<dt>Guide</dt>
 					<dd>
-						<a target="_blank">支付方式</a> |
+						<a target="_blank">Paying Method</a> |
 					</dd>
 					<dd>
-						<a target="_blank">配送方式</a> |
+						<a target="_blank">Delivered</a> |
 					</dd>
 					<dd>
-						<a target="_blank">售后服务</a> |
+						<a target="_blank">Service</a> |
 					</dd>
 					<dd>
-						<a target="_blank">购物帮助</a> |
+						<a target="_blank">Shopping help</a> |
 					</dd>
 					<dd>
-						<a target="_blank">蔬菜卡</a> |
+						<a target="_blank">Gift card</a> |
 					</dd>
 					<dd>
-						<a target="_blank">礼品卡</a> |
+						<a target="_blank">Shopping card</a> |
 					</dd>
 					<dd>
-						<a target="_blank">银联卡</a> |
+						<a target="_blank">Discount card</a> |
 					</dd>
 					<dd>
-						<a target="_blank">亿家卡</a> |
+						<a target="_blank">Member card</a> |
 					</dd>
 
 					<dd class="more">
-						<a>更多</a>
+						<a>More</a>
 					</dd>
 				</dl>
 			</div>
 		</div>
 	</div>
-	<div class="container footer">
-		<div class="span24">
-			<div class="footerAd">
-				<img src="${pageContext.request.contextPath}/image/footer.jpg"
-					width="950" height="52" alt="我们的优势" title="我们的优势">
-			</div>
-		</div>
-		<div class="span24">
-			<ul class="bottomNav">
-				<li><a>关于我们</a> |</li>
-				<li><a>联系我们</a> |</li>
-				<li><a>招贤纳士</a> |</li>
-				<li><a>法律声明</a> |</li>
-				<li><a>友情链接</a> |</li>
-				<li><a target="_blank">支付方式</a> |</li>
-				<li><a target="_blank">配送方式</a> |</li>
-				<li><a>服务声明</a> |</li>
-				<li><a>广告声明</a></li>
-			</ul>
-		</div>
-		<div class="span24">
-			<div class="copyright">Copyright © 2005-2015 网上商城 版权所有</div>
-		</div>
-	</div>
+	<%@include file="footer.jsp"  %>
 </body>
 </html>

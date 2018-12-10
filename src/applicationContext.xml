@@ -118,6 +118,16 @@
 		<property name="categorySecondService" ref="categorySecondService"></property>
 		<property name="categoryService" ref="categoryService"></property>
 	</bean>
+	<bean id="adminProductAction" class="pers.yhy.shop.product.adminaction.AdminProductAction"
+		scope="prototype">
+		<property name="productService" ref="productService"></property>
+		<property name="categorySecondService" ref="categorySecondService"></property>
+	</bean>
+	
+	<bean id="adminOrderAction" class="pers.yhy.shop.order.adminaction.AdminOrderAction"
+		scope="prototype">
+		<property name="orderService" ref="orderService"></property>
+	</bean>
 
 
 	<!-- Service configuration =========================== -->

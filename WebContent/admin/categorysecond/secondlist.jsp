@@ -19,7 +19,7 @@
 				<TBODY>
 					<tr>
 						<td class="ta_01" align="center" bgColor="#afd1f3">
-							<strong>List of Primary Classification</strong>
+							<strong>List of Second Classification</strong>
 						</td>
 					</tr>
 					<tr>

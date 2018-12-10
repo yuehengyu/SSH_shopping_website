@@ -30,10 +30,8 @@ public class OrderAction extends ActionSupport implements ModelDriven<Order> {
 	private Order order = new Order();
 	private Integer page;
 	private String pd_FrpId;// bank interface
-	private String r6_Order;//pay success and get the back order id
-	private String r3_Amt;//get the money when pay success
-	
-	
+	private String r6_Order;// pay success and get the back order id
+	private String r3_Amt;// get the money when pay success
 
 	public void setR6_Order(String r6_Order) {
 		this.r6_Order = r6_Order;
@@ -103,6 +101,9 @@ public class OrderAction extends ActionSupport implements ModelDriven<Order> {
 			return "login";
 		}
 		order.setUser(existUser);
+		order.setName(existUser.getName());
+		order.setPhone(existUser.getPhone());
+		order.setAddr(existUser.getAddr());
 		orderService.save(order);
 		// show orderItem in our webpage and clear our cart
 		cart.clearCart();
@@ -133,6 +134,12 @@ public class OrderAction extends ActionSupport implements ModelDriven<Order> {
 		return "findByOidSuccess";
 	}
 
+	/**
+	 * pay money for user order
+	 * 
+	 * @return
+	 * @throws IOException
+	 */
 	public String payOrder() throws IOException {
 		Order currOrder = orderService.findByOid(order.getOid());
 		// set payer info
@@ -158,8 +165,8 @@ public class OrderAction extends ActionSupport implements ModelDriven<Order> {
 		String keyValue = "69cl522AV6q613Ii4W6u8K6XuW8vM1N6bFgyv769220IuYe9u37N4y7rI4Pl";
 		String hmac = PaymentUtil.buildHmac(p0_Cmd, p1_MerId, p2_Order, p3_Amt, p4_Cur, p5_Pid, p6_Pcat, p7_Pdesc,
 				p8_Url, p9_SAF, pa_MP, pd_FrpId, pr_NeedResponse, keyValue);
-		//set these parameters to yibao payment interface
-		StringBuffer stringBuffer=new StringBuffer("https://www.yeepay.com/app-merchant-proxy/node?");
+		// set these parameters to yibao payment interface
+		StringBuffer stringBuffer = new StringBuffer("https://www.yeepay.com/app-merchant-proxy/node?");
 		stringBuffer.append("p0_Cmd=").append(p0_Cmd).append("&");
 		stringBuffer.append("p1_MerId=").append(p1_MerId).append("&");
 		stringBuffer.append("p2_Order=").append(p2_Order).append("&");
@@ -174,18 +181,35 @@ public class OrderAction extends ActionSupport implements ModelDriven<Order> {
 		stringBuffer.append("pd_FrpId=").append(pd_FrpId).append("&");
 		stringBuffer.append("pr_NeedResponse=").append(pr_NeedResponse).append("&");
 		stringBuffer.append("hmac=").append(hmac);
-		//redirect to yibao
+		// redirect to yibao
 		ServletActionContext.getResponse().sendRedirect(stringBuffer.toString());
 		return NONE;
 	}
-	
+
+	/**
+	 * paying success and then go back to our website
+	 * 
+	 * @return
+	 */
 	public String callBack() {
-		//update order state to 2
-		Order currOrder=orderService.findByOid(Integer.parseInt(r6_Order));
+		// update order state to 2
+		Order currOrder = orderService.findByOid(Integer.parseInt(r6_Order));
 		currOrder.setState(2);
 		orderService.update(currOrder);
-		//show succ msg in our webpage
-		this.addActionMessage("Successful order payment！Order number is "+r6_Order+", the payment amount  "+r3_Amt);
+		// show succ msg in our webpage
+		this.addActionMessage(
+				"Successful order payment！Order number is " + r6_Order + ", the payment amount  " + r3_Amt);
 		return "msg";
+	}
+	
+	/**
+	 * confirm receipt update state
+	 * @return
+	 */
+	public String updateState() {
+		Order currOrder=orderService.findByOid(order.getOid());
+		currOrder.setState(4);
+		orderService.update(currOrder);
+		return "updateStateSuccess";
 	}
 }

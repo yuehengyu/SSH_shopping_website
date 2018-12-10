@@ -30,7 +30,11 @@
 		d.add('0102','01','Primary Classification');
 		d.add('010201','0102','Primary manage','${pageContext.request.contextPath}/adminCategory_findAll.action','','mainFrame');
 		d.add('0103','01','second Classification');
-		d.add('010301','0103','Second manage','${pageContext.request.contextPath}/adminCategorySecond_findAll.action?page=1 ','','mainFrame')
+		d.add('010301','0103','Second manage','${pageContext.request.contextPath}/adminCategorySecond_findAll.action?page=1 ','','mainFrame');
+		d.add('0104','01','Product Manage');
+		d.add('010401','0104','Product manage','${pageContext.request.contextPath}/adminProduct_findAll.action?page=1 ','','mainFrame');
+		d.add('0105','01','Order Manage');
+		d.add('010501','0105','Order manage','${pageContext.request.contextPath}/adminOrder_findAll.action?page=1 ','','mainFrame');
 		document.write(d);
 		//-->
 	</script>

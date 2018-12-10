@@ -19,7 +19,7 @@
 		<many-to-one name="user" lazy="false" class="pers.yhy.shop.user.vo.User"
 			column="uid" />
 		<!-- relationships:orderItem -->
-		<set name="orderItems" lazy="false" cascade="save-update">
+		<set name="orderItems" order-by="itemid" lazy="false" cascade="save-update">
 			<key column="uid"></key>
 			<one-to-many class="pers.yhy.shop.order.vo.OrderItem" />
 		</set>

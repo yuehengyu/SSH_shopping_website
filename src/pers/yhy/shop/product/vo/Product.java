@@ -18,7 +18,7 @@ public class Product {
 	private String image;
 	private String pdesc;
 	private Integer is_hot;
-	private Date pdate;
+	private String pdate;
 	// second classificationima primary key object
 	private CategorySecond categorySecond;
 
@@ -86,12 +86,13 @@ public class Product {
 		this.is_hot = is_hot;
 	}
 
-	public Date getPdate() {
+	public String getPdate() {
 		return pdate;
 	}
 
-	public void setPdate(Date pdate) {
+	public void setPdate(String pdate) {
 		this.pdate = pdate;
 	}
+
 
 }

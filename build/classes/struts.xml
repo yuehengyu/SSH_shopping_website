@@ -9,9 +9,15 @@
 
 	<package name="SSH_shopping_website" extends="struts-default"
 		namespace="/">
+		
+		<interceptors>
+			<interceptor name="privilegeInterceptor" class="pers.yhy.shop.Interceptor.PrivilegeInterceptor" />
+		</interceptors>
+		
 		<global-results>
 			<result name="msg">/WEB-INF/jsp/msg.jsp</result>
 			<result name="login">/WEB-INF/jsp/login.jsp</result>
+			<result name="loginRequest">/admin/index.jsp</result>
 		</global-results>
 		<!-- configure the action of home page -->
 		<action name="index" class="indexAction">
@@ -48,6 +54,7 @@
 			<result name="saveSuccess">/WEB-INF/jsp/order.jsp</result>
 			<result name="findByUidSuccess">/WEB-INF/jsp/orderList.jsp</result>
 			<result name="findByOidSuccess">/WEB-INF/jsp/order.jsp</result>
+			<result name="updateStateSuccess" type="redirectAction">order_findByUid.action?page=1</result>
 		</action>
 
 		<action name="adminUser_*" class="adminUserAction" method="{1}">
@@ -55,21 +62,62 @@
 			<result name="loginFail">/admin/index.jsp</result>
 		</action>
 
-		<action name="adminCategory_*" class="adminCategoryAction" method="{1}">
+		<action name="adminCategory_*" class="adminCategoryAction"
+			method="{1}">
+			
+			<interceptor-ref name="privilegeInterceptor" />
+			<interceptor-ref name="defaultStack" />
 			<result name="findAll">/admin/category/list.jsp</result>
-			<result name="saveSuccess" type="redirectAction">adminCategory_findAll.action</result>
-			<result name="deleteSuccess" type="redirectAction">adminCategory_findAll.action</result>
+			<result name="saveSuccess" type="redirectAction">adminCategory_findAll.action
+			</result>
+			<result name="deleteSuccess" type="redirectAction">adminCategory_findAll.action
+			</result>
 			<result name="editSuccess">/admin/category/edit.jsp</result>
-			<result name="updateSuccess" type="redirectAction">adminCategory_findAll.action</result>
+			<result name="updateSuccess" type="redirectAction">adminCategory_findAll.action
+			</result>
+			
 		</action>
-		
-		<action name="adminCategorySecond_*" class="adminSecondCategoryAction" method="{1}">
+
+		<action name="adminCategorySecond_*" class="adminSecondCategoryAction"
+			method="{1}">
+			
+			<interceptor-ref name="privilegeInterceptor" />
+			<interceptor-ref name="defaultStack" />
 			<result name="findAll">/admin/categorysecond/secondlist.jsp</result>
 			<result name="addPage">/admin/categorysecond/secondadd.jsp</result>
 			<result name="editSuccess">/admin/categorysecond/secondedit.jsp</result>
-			<result name="deleteSuccess" type="redirectAction">adminCategorySecond_findAll.action?page=1</result>
-			<result name="saveSuccess" type="redirectAction">adminCategorySecond_findAll.action?page=1</result>
-			<result name="updateSuccess" type="redirectAction">adminCategorySecond_findAll.action?page=1</result>
+			<result name="deleteSuccess" type="redirectAction">adminCategorySecond_findAll.action?page=1
+			</result>
+			<result name="saveSuccess" type="redirectAction">adminCategorySecond_findAll.action?page=1
+			</result>
+			<result name="updateSuccess" type="redirectAction">adminCategorySecond_findAll.action?page=1
+			</result>
+			
+		</action>
+
+		<action name="adminProduct_*" class="adminProductAction"
+			method="{1}">
+			
+			<interceptor-ref name="privilegeInterceptor" />
+			<interceptor-ref name="defaultStack" />
+			<result name="findAll">/admin/product/list.jsp</result>
+			<result name="addPage">/admin/product/add.jsp</result>
+			<result name="save" type="redirectAction">adminProduct_findAll.action?page=1
+			</result>
+			<result name="deleteSuccess" type="redirectAction">adminProduct_findAll.action?page=1
+			</result>
+			<result name="editSuccess">/admin/product/edit.jsp</result>
+			<result name="updateSuccess" type="redirectAction">adminProduct_findAll.action?page=1
+			</result>
+			
+		</action>
+
+		<action name="adminOrder_*" class="adminOrderAction" method="{1}">
+			<interceptor-ref name="privilegeInterceptor" />
+			<interceptor-ref name="defaultStack" />
+			<result name="findAll">/admin/order/list.jsp</result>
+			<result name="findOrderItem">/admin/order/orderItem.jsp</result>
+			<result name="updateStateSuccess" type="redirectAction">adminOrder_findAll.action?page=1</result>
 		</action>
 	</package>
 </struts>

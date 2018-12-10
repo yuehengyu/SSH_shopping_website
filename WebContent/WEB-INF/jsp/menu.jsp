@@ -55,6 +55,4 @@
 			</s:iterator>
 		</ul>
 	</div>
-
-
 </div>

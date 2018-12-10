@@ -8,6 +8,7 @@ import com.sun.org.apache.bcel.internal.generic.NEW;
 
 import pers.yhy.shop.order.dao.OrderDao;
 import pers.yhy.shop.order.vo.Order;
+import pers.yhy.shop.order.vo.OrderItem;
 import pers.yhy.shop.utils.PageBean;
 
 /**
@@ -77,5 +78,40 @@ public class OrderService {
 	 */
 	public void update(Order currOrder) {
 		orderDao.update(currOrder);
+	}
+	
+	/**
+	 * find all orders
+	 * @param page
+	 * @return
+	 */
+	public PageBean<Order> findByPage(Integer page) {
+		PageBean<Order> pageBean = new PageBean<Order>();
+		pageBean.setPage(page);
+		Integer limit = 10;
+		pageBean.setLimit(limit);
+		Integer totalCount = null;
+		totalCount = orderDao.findByCount();
+		pageBean.setTotalCount(totalCount);
+		int totalPage = 0;
+		if (totalCount % limit == 0) {
+			totalPage = totalCount / limit;
+		} else {
+			totalPage = totalCount / limit + 1;
+		}
+		pageBean.setTotalPage(totalPage);
+		Integer begin = (page - 1) * limit;
+		List<Order> list = orderDao.findByPage(begin, limit);
+		pageBean.setList(list);
+		return pageBean;
+	}
+	
+	/**
+	 * find order item by order id
+	 * @param oid
+	 * @return
+	 */
+	public List<OrderItem> findOrderItem(Integer oid) {
+		return orderDao.findOrderItem(oid);
 	}
 }

@@ -74,4 +74,11 @@ public class CategorySecondService {
 	public void update(CategorySecond categorySecond) {
 		categorySecondDao.update(categorySecond);
 	}
+	
+	/**
+	 * find all second categories
+	 */
+	public List<CategorySecond> findAll() {
+		return  categorySecondDao.findAll();
+	}
 }
