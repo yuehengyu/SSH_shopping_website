@@ -251,5 +251,32 @@ Find all the orders by user id<br>
 Find the order detail info by order id
 
 
+## 2.1.1 Admin Modules<br>
 
+### Manage User<br>
+I do not design this module. It is similar with the other modules.<br>
+
+### Manage Primary Category<br>
+1.Add Primary Category<br>
+2.Edit Primary Category<br>
+3.Delete Primary Category and also delete related second category.<br>
+4.Find all primary category info.<br>
+
+### Manage Second Category <br>
+1.Add Second Category<br>
+2.Edit Second Category,we need to search all the primary category first.<br>
+3.Delete Second Category .<br>
+4.Find all Second category info,Paging query .<br>
+
+### Manage products<br>
+1.Add products and save related second category,upload image.<br>
+2.Edit product info,edit image.<br>
+3.Delete products<br>
+4.Find All products,paging query.<br>
+
+### Manage Orders <br>
+1.Find all orders and load line items asynchronously.
+
+### Filter
+Set the interceptor, we need to log in to operate the background.
 
