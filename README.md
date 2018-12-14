@@ -49,7 +49,9 @@
 `hibernate-distribution-3.6.10.Final\lib\jpa\*.jar`<br>
 `slf4j-log4j.jar`<br>
 5.Basic configuration information<br>
-you can see me code directly:struts.xml,jdbc.properties,log4j.properties,applicationContext.xml 
+you can see me code directly:struts.xml,jdbc.properties,log4j.properties,applicationContext.xml <br>
+
+![](https://github.com/yuehengyu/SSH_shopping_website/blob/master/img/user_home.png)<br>
 
 ## 1.1.1 user modules
 ### Register
@@ -60,6 +62,7 @@ you can see me code directly:struts.xml,jdbc.properties,log4j.properties,applica
 4. Verification code.<br>
 5. Send an activation email.<br>
 6. Save user information to the database.<br>
+![](https://github.com/yuehengyu/SSH_shopping_website/blob/master/img/user_register.png) <br>
 
 ### Activation
 
@@ -72,7 +75,7 @@ you can see me code directly:struts.xml,jdbc.properties,log4j.properties,applica
 1. Enter the username and password.----(need data check.)<br>
 2. The username and password are correct and the user status must be active.<br>
 3. Destroy the session.<br>
-
+![](https://github.com/yuehengyu/SSH_shopping_website/blob/master/img/user_login.png)<br>
 
 ### Vefification code function
 The code for generating the random verification is shown as below:`(note:You also need to configure your file)`<br>
@@ -233,6 +236,8 @@ Find product info in second classification by categorySecond id<br>
 ### remove the product from cart by using product id<br>
 ### clear the cart<br>
 
+![](https://github.com/yuehengyu/SSH_shopping_website/blob/master/img/user_shopcart.png) <br>
+
 ## 1.1.5 Orders Module<br>
 
 ### generate a new order<br>
@@ -250,6 +255,7 @@ Find all the orders by user id<br>
 ### See the order detail info
 Find the order detail info by order id
 
+![](https://github.com/yuehengyu/SSH_shopping_website/blob/master/img/user_orders.png) <br>
 
 ## 2.1.1 Admin Modules<br>
 
@@ -261,6 +267,8 @@ I do not design this module. It is similar with the other modules.<br>
 2.Edit Primary Category<br>
 3.Delete Primary Category and also delete related second category.<br>
 4.Find all primary category info.<br>
+
+![](https://github.com/yuehengyu/SSH_shopping_website/blob/master/img/admin_category.png) <br>
 
 ### Manage Second Category <br>
 1.Add Second Category<br>
@@ -274,8 +282,12 @@ I do not design this module. It is similar with the other modules.<br>
 3.Delete products<br>
 4.Find All products,paging query.<br>
 
+![](https://github.com/yuehengyu/SSH_shopping_website/blob/master/img/admin_product.png) <br>
+
 ### Manage Orders <br>
 1.Find all orders and load line items asynchronously.
+
+![](https://github.com/yuehengyu/SSH_shopping_website/blob/master/img/admin_order.png) <br>
 
 ### Filter
 Set the interceptor, we need to log in to operate the background.
