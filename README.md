@@ -219,6 +219,8 @@ At the same time, query the secondary classification to which each primary class
 ### Query hot Products
 Query hot products: (limited number of 10)<br>
 
+![](https://github.com/yuehengyu/SSH_shopping_website/blob/master/img/user_product.png) <br>
+
 ### Query lastest product
 Query lastest products: (limited number of 10)<br>
 
@@ -229,6 +231,8 @@ Find product info by different categoryId.<br>
 Find product info in second classification by categorySecond id<br>
 
 ### Query Product info by product id<br>
+
+![](https://github.com/yuehengyu/SSH_shopping_website/blob/master/img/user_productinfo.png)<br>
 
 ## 1.1.4 Cart Module<br>
 
@@ -279,6 +283,7 @@ I do not design this module. It is similar with the other modules.<br>
 ### Manage products<br>
 1.Add products and save related second category,upload image.<br>
 2.Edit product info,edit image.<br>
+![](https://github.com/yuehengyu/SSH_shopping_website/blob/master/img/admin_editproduct.png)<br>
 3.Delete products<br>
 4.Find All products,paging query.<br>
 
