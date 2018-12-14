@@ -60,6 +60,7 @@ you can see me code directly:struts.xml,jdbc.properties,log4j.properties,applica
 4. Verification code.<br>
 5. Send an activation email.<br>
 6. Save user information to the database.<br>
+![](https://github.com/yuehengyu/SSH_shopping_website/blob/master/img/user_register.png)
 
 ### Activation
 
